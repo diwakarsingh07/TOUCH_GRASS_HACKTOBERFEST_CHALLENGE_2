@@ -1,4 +1,9 @@
+<img width="1300" height="546" alt="ijk84ufie08i0jyfi24s" src="https://github.com/user-attachments/assets/b7ac123b-cd59-4faf-bc0e-1ce789389cee" />
+
+
 # 🌿 TrailWhisper: Dual-Engine Multimodal Bioacoustic Scout
+<img width="1536" height="672" alt="2g34pkdew7svc5ixj2gm" src="https://github.com/user-attachments/assets/69df0f2e-4249-4f1e-a835-f7057c5fece2" />
+
 
 > **Built for Hacktoberfest Weekend Challenge: Touch Grass (October 2026)**  
 > *Get off your screen and out into the wild. Dual-engine multimodal audio intelligence + offline bioacoustics, zero cell reception required, Bluetooth earbud voice guidance, and an automatic screen-blanker.*
