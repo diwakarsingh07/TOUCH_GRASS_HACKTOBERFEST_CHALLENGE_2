@@ -143,7 +143,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-DEMO_DIR = r"D:\trailwhisper\demo_sounds"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DEMO_DIR = os.path.join(BASE_DIR, "demo_sounds")
 
 # Session State for "Touch Grass" Zen Mode
 if "touch_grass_mode" not in st.session_state:
@@ -227,13 +228,16 @@ if input_mode == "🌲 Calibrated Trail Audio Presets (Test 7 Species)":
     )
     
     audio_path = os.path.join(DEMO_DIR, selected_sample)
-    sample_rate, audio_data = AudioEngine.load_audio(audio_path)
-    try:
-        with open(audio_path, "rb") as f:
-            raw_audio_bytes = f.read()
-    except Exception:
-        pass
-    st.audio(audio_path, format="audio/wav")
+    if os.path.exists(audio_path):
+        sample_rate, audio_data = AudioEngine.load_audio(audio_path)
+        try:
+            with open(audio_path, "rb") as f:
+                raw_audio_bytes = f.read()
+        except Exception:
+            pass
+        st.audio(audio_path, format="audio/wav")
+    else:
+        st.warning(f"Audio file '{selected_sample}' not found in demo_sounds directory.")
 
 elif input_mode == "📱 Upload Phone Voice Recording (WAV/MP3/M4A/OGG)":
     st.markdown("<small style='color: #94a3b8;'>Tap below on your phone to open your native Voice Recorder app:</small>", unsafe_allow_html=True)
