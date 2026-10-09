@@ -12,6 +12,12 @@ import re
 import json
 from typing import Dict, Any, Optional
 
+try:
+    import google.generativeai as genai
+    GEMINI_AVAILABLE = True
+except Exception:
+    GEMINI_AVAILABLE = False
+
 # Load local .env securely if present (ignored by .gitignore)
 env_path = os.path.join(os.path.dirname(__file__), ".env")
 if os.path.exists(env_path):
