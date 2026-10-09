@@ -3,3 +3,6 @@ plotly
 numpy
 scipy
 pandas
+soundfile
+pydub
+google-generativeai

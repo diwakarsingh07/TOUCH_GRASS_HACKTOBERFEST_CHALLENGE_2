@@ -7,7 +7,13 @@ Supports WAV, MP3, M4A, OGG, and FLAC recorded directly from mobile phones.
 
 import io
 import numpy as np
-import soundfile as sf
+
+try:
+    import soundfile as sf
+    HAS_SOUNDFILE = True
+except ImportError:
+    HAS_SOUNDFILE = False
+
 from scipy.io import wavfile
 from scipy.signal import spectrogram
 from typing import Tuple, Dict, Any
@@ -33,14 +39,15 @@ class AudioEngine:
         Supports WAV, OGG, FLAC, MP3, M4A using soundfile / scipy.
         """
         # Try soundfile first (supports WAV, OGG, FLAC)
-        try:
-            buffer.seek(0)
-            data, sr = sf.read(buffer)
-            if data.ndim > 1:
-                data = data.mean(axis=1)
-            return sr, data.astype(np.float32)
-        except Exception:
-            pass
+        if HAS_SOUNDFILE:
+            try:
+                buffer.seek(0)
+                data, sr = sf.read(buffer)
+                if data.ndim > 1:
+                    data = data.mean(axis=1)
+                return sr, data.astype(np.float32)
+            except Exception:
+                pass
 
         # Fallback to scipy wavfile
         try:
