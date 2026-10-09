@@ -1,4 +1,5 @@
 # TrailWhisper: Dual-Engine Multimodal Bioacoustic Scout 🌿
+<img width="1536" height="672" alt="2g34pkdew7svc5ixj2gm" src="https://github.com/user-attachments/assets/eb9937cd-2e20-4c60-b297-80f2f63f8607" />
 
 *This is a submission for the [Hacktoberfest Weekend Challenge: Touch Grass](https://dev.to/challenges/hacktoberfest-weekend-2026-10-08)*
 
